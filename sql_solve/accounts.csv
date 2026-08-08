@@ -1,0 +1,8 @@
+account_id,account_name,team_owner,cost_center
+
+111111111111,Data-Platform-Prod,Data Engineering,CC-1001
+222222222222,Web-App-Prod,Platform,CC-1002
+333333333333,ML-Research,Data Science,CC-1003
+444444444444,Shared-Services,Platform,CC-1004
+555555555555,Sandbox-Dev,Data Engineering,CC-1005
+666666666666,Unused-Test-Account,Platform,CC-1006
