@@ -11,7 +11,7 @@
 
 ## Section 1: Basics — SELECT, WHERE, ORDER BY, LIKE, DISTINCT (Easy)
 
-1. Select all columns for line items belonging to product code `EC2`.
+1. Select all columns for line items belonging to product code `EC2`. - done
 2. Find all line items with a cost greater than 100, sorted from highest to lowest cost.
 3. Find all distinct `line_item_product_code` values present in the data.
 4. Find all line items where `resource_tags_user_team` is `NULL` (untagged spend).
