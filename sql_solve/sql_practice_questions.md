@@ -5,36 +5,36 @@
 - `accounts` — 6 rows mapping account_id → account_name, team_owner, cost_center
   (Note: account `666666666666` intentionally has ZERO matching rows in `cur_data` — useful for anti-join practice)
 
-
+- SELECT, FROM, WHERE, GROUP BY, HAVING, ORDER BY
 
 ---
 
 ## Section 1: Basics — SELECT, WHERE, ORDER BY, LIKE, DISTINCT (Easy)
 
 1. Select all columns for line items belonging to product code `EC2`. - done
-2. Find all line items with a cost greater than 100, sorted from highest to lowest cost.
-3. Find all distinct `line_item_product_code` values present in the data.
-4. Find all line items where `resource_tags_user_team` is `NULL` (untagged spend).
-5. Find all line items where the resource ID starts with `i-` (i.e., EC2 instance IDs), using `LIKE`.
-6. Find all line items from January 2026 only (use the `line_item_usage_start_date` column).
+2. Find all line items with a cost greater than 100, sorted from highest to lowest cost. - done
+3. Find all distinct `line_item_product_code` values present in the data.- done
+4. Find all line items where `resource_tags_user_team` is `NULL` (untagged spend). - done
+5. Find all line items where the resource ID starts with `i-` (i.e., EC2 instance IDs), using `LIKE`. - done
+6. Find all line items from January 2026 only (use the `line_item_usage_start_date` column).- done
 
 ---
 
 ## Section 2: NULL Handling & CASE WHEN (Easy–Medium)
 
-7. Write a query that replaces `NULL` values in `resource_tags_user_team` with the label `'Untagged'`.
-8. Count how many rows have a `NULL` team tag vs how many don't.
-9. Using `CASE WHEN`, create a new column `cost_category` that labels each row as `'Credit/Refund'` if cost is negative, `'Tax'` if `line_item_line_item_type = 'Tax'`, and `'Usage'` otherwise.
-10. Find all rows where `line_item_resource_id` is `NULL` — what does this tell you about which product types tend to lack a specific resource ID?
+7. Write a query that replaces `NULL` values in `resource_tags_user_team` with the label `'Untagged'`.- done 
+8. Count how many rows have a `NULL` team tag vs how many don't. - done
+9. Using `CASE WHEN`, create a new column `cost_category` that labels each row as `'Credit/Refund'` if cost is negative, `'Tax'` if `line_item_line_item_type = 'Tax'`, and `'Usage'` otherwise.- done
+10. Find all rows where `line_item_resource_id` is `NULL` — what does this tell you about which product types tend to lack a specific resource ID? - DONE
 
 ---
 
 ## Section 3: Aggregate Functions & GROUP BY / HAVING (Easy–Medium)
 
-11. Find the total (`SUM`) unblended cost per `line_item_product_code`.
-12. Find the average cost per `line_item_line_item_type`.
-13. Count how many line items exist per `line_item_usage_account_id`.
-14. Find product codes where total cost exceeds 300 (use `HAVING`).
+11. Find the total (`SUM`) unblended cost per `line_item_product_code`.-done
+12. Find the average cost per `line_item_line_item_type`.-done
+13. Count how many line items exist per `line_item_usage_account_id`.-done
+14. Find product codes where total cost exceeds 300 (use `HAVING`).- done
 15. Find the total cost per account **per month** (hint: you'll need to extract/truncate the month from the date column).
 
 ---

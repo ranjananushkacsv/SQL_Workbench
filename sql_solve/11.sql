@@ -1,0 +1,3 @@
+SELECT line_item_unblended_cost ,SUM(line_item_unblended_cost) AS total_blended_cost
+FROM cur_data
+GROUP BY line_item_unblended_cost;

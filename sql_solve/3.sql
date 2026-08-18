@@ -1,0 +1,1 @@
+SELECT DISTINCT line_item_product_code FROM cur_data;
